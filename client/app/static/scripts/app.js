@@ -27,10 +27,6 @@ angular
         templateUrl: 'static/views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/search', {
-        templateUrl: 'static/views/search.html',
-        controller: 'httpReqController'
-      })
       .otherwise({
         redirectTo: '/'
       });

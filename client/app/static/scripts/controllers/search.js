@@ -129,7 +129,7 @@ $scope.myFunction = function() {
 
 
 angular.module('frontendApp')
-  .controller('httpReqController', ['$scope','$cookies', '$http','sharedPropertyAddress','sharedPropertySport','sharedPropertyResults','sharedPropertyFromMain', function( $scope,$http,$cookies,sharedPropertyAddress,sharedPropertySport,sharedPropertyResults,sharedPropertyFromMain) {
+  .controller('httpReqController', ['$location','$scope','$cookies', '$http','sharedPropertyAddress','sharedPropertySport','sharedPropertyResults','sharedPropertyFromMain', function( $location,$scope,$http,$cookies,sharedPropertyAddress,sharedPropertySport,sharedPropertyResults,sharedPropertyFromMain) {
     console.log('Ctrol Main');
 	console.log($scope.$$phase);
 		 if(!$scope.$$phase) {
@@ -145,6 +145,7 @@ angular.module('frontendApp')
 
 
 $scope.myFunction = function() {
+	
     sharedPropertySport.setProperty($scope.sport);
 
 
@@ -155,7 +156,7 @@ $scope.myFunction = function() {
 	sharedPropertyFromMain.setProperty("Y");
 	console.log("i main ctrl");
 	console.log(sharedPropertyFromMain.getProperty());
-
+	$location.path( '#/search.html' );
 
 };
 
